@@ -1,75 +1,67 @@
 # Day 60 Task | Cohort 2.0
 
-This repository contains all the JavaScript exercises completed as part of **Day 58** in **Sheryians Coding School Cohort 2.0**.  
-The focus was to understand OOPS concepts such as **Objects, Classes, Constructors, Prototypes, `this` keyword, call/apply/bind**, and writing cleaner reusable code.
+This repository contains all the JavaScript exercises completed as part of **Day 60** in **Sheryians Coding School Cohort 2.0**.  
+The focus of this day was to understand **Callbacks**, **Asynchronous Flow**, **Callback Chaining**, and how Callback Hell starts in JavaScript using `setTimeout()`.
 
-Two JavaScript files were created:
+All exercises are written inside **one single JavaScript file**.
 
-- **script1.js** → Core OOPS concepts  
-- **script2.js** → Reinforcement & additional practice  
+## 📁 File in This Task
 
-
-## 📌 About Day 58 Task
-
-Day 58 helped build a strong foundation in JavaScript OOPS.  
-You learned how to organize data + behavior together, avoid repetitive code, and write scalable programs.
-
-# 📁 Files in This Task
-
-## 📌 script1.js — Core JavaScript OOPS Concepts
+### 📌 day60.js — All Callback Exercises (Single File)
 
 ### Topics Covered
-- Creating objects with properties and methods  
-- Converting repeated objects into classes  
-- Constructor usage and initialization  
-- Understanding the `this` keyword  
-- Normal function vs arrow function inside objects  
-- Constructor functions (old JS method)  
-- Prototypes for memory-efficient shared methods  
-- Comparing function equality (prototype vs constructor methods)  
-- call(), apply(), bind() to control execution context  
-- Borrowing methods using call()  
+- Creating and using callback functions  
+- Understanding async execution with `setTimeout()`  
+- Custom delay functions  
+- Passing data through callbacks  
+- Callback chaining  
+- Handling multiple async steps  
+- Callback dependency (login → permissions → dashboard)  
+- Callback hell structure  
 
+## 🧩 Exercises Included
 
-## 📌 script2.js — OOPS Reinforcement & Additional Practice
+### ✔️ Exercise 1 — Callback + Delay (Very Easy)
+- Build a function `afterDelay(time, callback)`  
+- Run callback after given milliseconds  
+- Understand async delay flow  
 
-### Topics Covered
-- Laptop object vs Laptop class comparison  
-- Employee class with independent object data  
-- BankAccount class and deposit method  
-- Why objects update independently  
-- Fixing `this` using bind()  
-- Vehicle constructor function + prototype methods  
-- Prototype memory optimization  
-- Practice of call(), apply(), bind() with examples  
+### ✔️ Exercise 2 — Data Flow + Callback Chaining
+- `getUser()` returns a user object after 1 second  
+- `getUserPosts()` returns posts based on userId  
+- Shows how async results move from one function to the next  
+
+### ✔️ Exercise 3 — Multi-step Async Flow (Callback Hell Simulation)
+- `loginUser()` → returns user  
+- `fetchPermissions()` → returns array of permissions  
+- `loadDashboard()` → simulates dashboard loading  
+- Demonstrates nested callback structure  
+
 
 # ✨ Key Learning Highlights
 
 You learned to:
-- Build reusable **classes** instead of repeated objects  
-- Use **constructors** for initializing data  
-- Share methods using **prototypes**  
-- Understand how `this` works in different contexts  
-- Use **call**, **apply**, **bind** to borrow or control function execution  
-- Write clean, structured, OOPS-based JavaScript code  
+- Handle asynchronous behavior using callbacks  
+- Use `setTimeout()` to simulate delayed tasks  
+- Pass async results between functions  
+- Build multi-layer async flows  
+- Understand callback hell  
+- Prepare for Promises and async–await  
 
 
 # 🛠️ Technologies Used
 - **JavaScript (ES6+)**  
-- **Browser Console**  
-- **HTML** to connect JS files  
+- `setTimeout()`  
+- Browser Console  
 
 # 📖 Learning Outcome
 
-By completing Day 58, I understood:
-
-- Core OOPS structure in JavaScript  
-- Why classes prevent repetitive code  
-- Why prototypes improve memory usage  
-- How `this` behaves differently in various situations  
-- How to use call/apply/bind effectively  
-- How to write cleaner, modular JavaScript  
-
+By completing Day 60, I understood:
+- How asynchronous execution works in JavaScript  
+- How callbacks allow sequential async flow  
+- Why deeply nested callbacks become unreadable  
+- How async dependencies flow between functions  
+- Why Promises and async–await are needed for cleaner code  
 
 # 🌟 Acknowledgement
 
