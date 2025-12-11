@@ -13,6 +13,16 @@
 // - Given `time` ke baad `callback` call kare
 // - Callback ke andar `"Callback executed"` print hona chahiye
 
+function afterDelay(time,cb){
+    setTimeout(() => {
+        cb()
+    }, time);
+}
+
+afterDelay(1000, function(){
+    console.log("callback executed")
+})
+
 // **Use case:**
 // > “2 second baad ek kaam karna hai”
 
