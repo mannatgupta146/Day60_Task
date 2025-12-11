@@ -36,51 +36,51 @@
 
 // // ---
 
-// ## Exercise 2 — Intermediate (Data flow)
+// // ## Exercise 2 — Intermediate (Data flow)
 
-// **Task (Hindi):** Ek function banao `getUser`
+// // **Task (Hindi):** Ek function banao `getUser`
 
-// **Requirements:**
-// - `getUser` `username` lega
-// - 1 second ke baad `callback` ko ek object de:
-//   - `id`
-//   - `username`
+// // **Requirements:**
+// // - `getUser` `username` lega
+// // - 1 second ke baad `callback` ko ek object de:
+// //   - `id`
+// //   - `username`
 
-function getUser(username, cb1){
-    setTimeout(() => {
-        cb1({username, age: 22, userId: 15281})
-    }, 1000);
-}
+// function getUser(username, cb1){
+//     setTimeout(() => {
+//         cb1({username, age: 22, userId: 15281})
+//     }, 1000);
+// }
 
-// **Then:**
-// - Callback ke andar ek aur function call karo `getUserPosts`
+// // **Then:**
+// // - Callback ke andar ek aur function call karo `getUserPosts`
 
-// **`getUserPosts` requirements:**
-// - `userId` lega
-// - 1 second ke baad `callback` ko `posts` ka array de
+// // **`getUserPosts` requirements:**
+// // - `userId` lega
+// // - 1 second ke baad `callback` ko `posts` ka array de
 
-function getUserPosts(userId, cb2){
-    console.log("getting user posts...")
-    setTimeout(() => {
-        cb2(["post1", "post2", "post3"])
-    }, 1000);
-}
+// function getUserPosts(userId, cb2){
+//     console.log("getting user posts...")
+//     setTimeout(() => {
+//         cb2(["post1", "post2", "post3"])
+//     }, 1000);
+// }
 
-// **Final output:**
-// - User ka `username` print ho
-// - Fir uske `posts` print ho
+// // **Final output:**
+// // - User ka `username` print ho
+// // - Fir uske `posts` print ho
 
-getUser("Mannat", function(data){
-    getUserPosts(data.userId, function(posts){
-        console.log(data.username, data, posts)
-    })
-})
+// getUser("Mannat", function(data){
+//     getUserPosts(data.userId, function(posts){
+//         console.log(data.username, data, posts)
+//     })
+// })
 
-// **Goal:**
-// - Samajhna ki ek async ka result next async ko kaise milta hai
-// - Callback chaining practice
+// // **Goal:**
+// // - Samajhna ki ek async ka result next async ko kaise milta hai
+// // - Callback chaining practice
 
-// ---
+// // ---
 
 // ## Exercise 3 — Intermediate (Callback dependency — thoda painful)
 
@@ -95,11 +95,38 @@ getUser("Mannat", function(data){
 //    - `permissions` lega
 //    - 1 second baad callback ko `"Dashboard loaded"` bole
 
+function loginUser(user, cb1){
+    setTimeout(() => {
+        cb1({user, userId: 1, userAge: 21})
+    }, 1000);
+}
+
+function fetchPermissions(userId, cb2){
+    setTimeout(() => {
+        cb2(["read", "write", "update", "delete"])
+    }, 1000);
+}
+
+function loadDashboard(permissions, cb3){
+    setTimeout(() => {
+        cb3()
+    }, 1000);
+}
+
 // **Flow:**
 // - Pehle `loginUser`
 // - Uske andar `fetchPermissions`
 // - Uske andar `loadDashboard`
 // - Final output console mein print ho
+
+loginUser("mannat", function(data){
+    fetchPermissions(data.userId, function(permissions){
+        loadDashboard(permissions, function(){
+            console.log(`${data.user} dashboard loaded`)
+            console.log(permissions);
+        })
+    })
+})
 
 // **Goal:**
 // - Callback nesting ko feel karna
