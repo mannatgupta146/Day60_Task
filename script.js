@@ -26,6 +26,10 @@ afterDelay(1000, function(){
 // **Use case:**
 // > “2 second baad ek kaam karna hai”
 
+afterDelay(2000, function(){
+    console.log("2 second baad ek kaam karna hai")
+})
+
 // **Goal:**
 // - Samajhna ki callback delay ke baad kaise execute hota hai
 // - Ye `setTimeout` + callback connection hai
